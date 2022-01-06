@@ -3,11 +3,13 @@ package com.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.entity.*;
 import com.repositories.*;
 import com.service.DashboardService;
 
+@Service
 public class DashboardServiceImpl implements DashboardService{
 	
 	@Autowired
@@ -50,10 +52,15 @@ public class DashboardServiceImpl implements DashboardService{
 	public List<EmployeeInformation> getAllEmployee() {
 		return employeeInformationRepository.findAll();
 	}
+	
+	@Override
+	public EmployeeInformation getEmployee(String pk) {
+		return employeeInformationRepository.findByPk(pk);
+	}
 
 	@Override
-	public void addEmployee(EmployeeInformation employeeInformation) {
-		employeeInformationRepository.save(employeeInformation);
+	public EmployeeInformation addEmployee(EmployeeInformation employeeInformation) {
+		return employeeInformationRepository.save(employeeInformation);
 	}
 
 	@Override
@@ -65,6 +72,8 @@ public class DashboardServiceImpl implements DashboardService{
 	public void deleteEmployee(EmployeeInformation employeeInformation) {
 		employeeInformationRepository.delete(employeeInformation);
 	}
+
+	
 	
 
 }

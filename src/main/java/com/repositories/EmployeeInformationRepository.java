@@ -10,4 +10,6 @@ import com.entity.EmployeeInformation;
 @Qualifier(value="EmployeeInformationRepository")
 public interface EmployeeInformationRepository extends JpaRepository<EmployeeInformation, Long>{
 
+	EmployeeInformation findByPk(final String pk);
+	
 }

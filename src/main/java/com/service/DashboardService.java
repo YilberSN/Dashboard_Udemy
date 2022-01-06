@@ -16,7 +16,9 @@ public interface DashboardService {
 	
 	List<EmployeeInformation> getAllEmployee();
 	
-	void addEmployee(EmployeeInformation employeeInformation);
+	EmployeeInformation getEmployee(final String pk);
+	
+	EmployeeInformation addEmployee(EmployeeInformation employeeInformation);
 	
 	EmployeeInformation updateEmployee(EmployeeInformation employeeInformation);
 	
