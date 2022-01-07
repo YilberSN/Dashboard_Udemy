@@ -1,12 +1,13 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.entity.*;
 
 public interface DashboardService {
 
-	List<CompanyRevenue> getTodayRevenueDash();
+	HashMap<String, Object> getTodayRevenueDash();
 	
 	List<ProductCategory> getBestCategory();
 	
